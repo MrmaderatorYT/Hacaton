@@ -1,0 +1,112 @@
+.profile {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.profile__section {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.profile__section--header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.profile__section--details {
+  background-color: #f9f9f9;
+}
+.profile__section--actions {
+  text-align: center;
+}
+.profile__avatar {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.profile__avatar-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #4CAF50;
+}
+.profile__info {
+  margin-left: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.profile__info-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.profile__info-status {
+  font-size: 14px;
+  color: #4CAF50;
+}
+.profile__details-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.profile__details-list {
+  list-style: none;
+  padding: 0;
+}
+.profile__details-list-item {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.profile__details-list-item-label {
+  font-weight: bold;
+}
+.profile__details-list-item-value {
+  color: #555;
+}
+.profile__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+.profile__actions-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.profile__actions-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.profile__actions-button--edit {
+  background-color: #4CAF50;
+  color: #fff;
+}
+.profile__actions-button--edit:hover {
+  background-color: #45A049;
+}
+.profile__actions-button--logout {
+  background-color: #f44336;
+  color: #fff;
+}
+.profile__actions-button--logout:hover {
+  background-color: #e53935;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/main.css">
+    <title>TaskWarriors</title>
+</head>
+<body>
+<div class="wrapper">
+    <div id="modal" class="modal">
+        <form class="modal__content register__user" id="registerForm" action="taskwarriors://register" method="GET">
+            <div class="user__photo">
+                <img src="" alt="Ваше фото">
+            </div>
+            <div class="user__name-input">
+                <input maxlength="15" type="text" name="name" placeholder="Введіть ім'я..." required>
+            </div>
+            <div class="user__email">
+                <input type="email" name="email" placeholder="Введіть електронну пошту..." required>
+            </div>
+            <div class="user__password">
+                <input type="password" name="password" placeholder="Введіть пароль" required>
+            </div>
+            <button type="submit" class="submit-btn">Зареєструватися</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

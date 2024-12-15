@@ -1,0 +1,80 @@
+/* Основні стилі */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px; /* Базовий розмір шрифту */
+}
+
+.game {
+    max-width: 90%; /* Максимальна ширина контейнера */
+    width: 400px; /* Фіксована ширина для великих екранів */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+.game__title {
+    font-size: 1.5rem; /* 1.5 рази від базового розміру шрифту */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.game__choices {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.game__button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem; /* 1 раз від базового розміру шрифту */
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Кнопки займають рівну ширину */
+}
+
+.game__button:hover {
+    background-color: #45A049;
+}
+
+.game__result {
+    font-size: 1.125rem; /* 1.125 рази від базового розміру шрифту */
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Адаптивні стилі для екранів меншого розміру */
+@media (max-width: 480px) {
+    .game {
+        width: 90%; /* Зменшуємо ширину контейнера на менших екранах */
+        padding: 15px;
+    }
+
+    .game__title {
+        font-size: 1.25rem; /* Зменшуємо розмір заголовка */
+    }
+
+    .game__button {
+        padding: 10px 15px; /* Зменшуємо розмір кнопок */
+        font-size: 0.9rem; /* Зменшуємо розмір тексту на кнопках */
+    }
+
+    .game__result {
+        font-size: 1rem; /* Зменшуємо розмір тексту результату */
+    }
+}

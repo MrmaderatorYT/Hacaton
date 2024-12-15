@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1063042611886",
+    "project_id": "hackaton-3f311",
+    "storage_bucket": "hackaton-3f311.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063042611886:android:63d8991fe4a7ac852f4b3f",
+        "android_client_info": {
+          "package_name": "com.example.hacaton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzWXARVc8e3J8QqExKs2MLFoEpC-916ms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

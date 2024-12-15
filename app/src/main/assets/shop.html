@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/shop.css">
+    <title>Магазин</title>
+</head>
+<body>
+<div class="store">
+    <!-- Слайдер картинок -->
+    <div class="slider">
+        <ul class="slider__images">
+            <li class="slider__image active" data-id="1" data-price="100">
+                <img src="src/blue_yellow_boy_1.png" alt="Item 1" />
+            </li>
+            <li class="slider__image" data-id="2" data-price="200">
+                <img src="src/coin.png" alt="Item 2" />
+            </li>
+            <li class="slider__image" data-id="3" data-price="300">
+                <img src="src/blue_yellow_boy_1.png" alt="Item 3" />
+            </li>
+        </ul>
+    </div>
+
+    <!-- Слайдер піктограм -->
+    <div class="slider__thumbnails">
+        <div class="slider__thumbnail active" data-id="1">
+            <img src="imgs/item1.png" alt="Item 1" />
+        </div>
+        <div class="slider__thumbnail" data-id="2">
+            <img src="imgs/item2.png" alt="Item 2" />
+        </div>
+        <div class="slider__thumbnail" data-id="3">
+            <img src="imgs/item3.png" alt="Item 3" />
+        </div>
+    </div>
+
+    <!-- Кнопка "Придбати" -->
+    <div class="store__actions">
+        <button class="store__buy-button" onclick="onBuyClick()">Придбати (100 монеток)</button>
+    </div>
+</div>
+
+<script>
+    const slider = document.querySelector('.slider__images');
+    const slides = slider.querySelectorAll('li');
+
+    // Store the total number of images
+    const slideCount = slides.length;
+    let activeSlide = 0;
+
+    // To change the images dynamically every 2 seconds, use setInterval() method
+    setInterval(() => {
+        slides[activeSlide].classList.remove('active');
+        activeSlide++;
+        if (activeSlide === slideCount) {
+            activeSlide = 0;
+        }
+        slides[activeSlide].classList.add('active');
+
+        // Синхронізуємо піктограми з активним слайдом
+        syncThumbnails(activeSlide + 1);
+
+        // Оновлюємо текст кнопки "Придбати"
+        updateBuyButton();
+    }, 2000);
+
+    // Функція для синхронізації піктограм
+    function syncThumbnails(id) {
+        document.querySelectorAll('.slider__thumbnail').forEach(thumb => thumb.classList.remove('active'));
+        document.querySelector(`.slider__thumbnail[data-id="${id}"]`).classList.add('active');
+    }
+
+    // Функція для оновлення тексту кнопки "Придбати"
+    function updateBuyButton() {
+        const activeImage = document.querySelector('.slider__image.active');
+        const price = activeImage.getAttribute('data-price');
+        document.querySelector('.store__buy-button').innerText = `Придбати (${price} монеток)`;
+    }
+
+    // Функція для обробки натискання на кнопку "Придбати"
+    function onBuyClick() {
+        const activeImage = document.querySelector('.slider__image.active');
+        const itemId = activeImage.getAttribute('data-id');
+        const price = activeImage.getAttribute('data-price');
+        Android.onBuyItem(itemId, price); // Викликаємо метод Java через JavaScript Interface
+    }
+</script>
+</body>
+</html>
