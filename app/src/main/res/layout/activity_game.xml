@@ -2,18 +2,82 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#f9f9f9">
 
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/gameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Камінь, Ножиці, Папір"
+        android:textSize="24sp"
+        android:textColor="#333"
+        android:textStyle="bold" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigationView"
+    <LinearLayout
+        android:id="@+id/gameChoices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_navigation" />
+        android:layout_below="@id/gameTitle"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/rockButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Камінь"
+            android:textSize="16sp"
+            android:background="@drawable/button_selector"
+        android:textColor="#fff"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:onClick="onChoiceClick" />
+
+        <Button
+            android:id="@+id/scissorsButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ножиці"
+            android:textSize="16sp"
+            android:background="@drawable/button_selector"
+        android:textColor="#fff"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:onClick="onChoiceClick" />
+
+        <Button
+            android:id="@+id/paperButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Папір"
+            android:textSize="16sp"
+            android:background="@drawable/button_selector"
+        android:textColor="#fff"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:onClick="onChoiceClick" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gameChoices"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Результат"
+        android:textSize="18sp"
+        android:textColor="#555" />
+
 </RelativeLayout>

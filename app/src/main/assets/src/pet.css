@@ -1,41 +1,242 @@
-body {
+@charset "UTF-8";
+* {
+  padding: 0;
   margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
+  border: 0;
 }
 
-.character__image {
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* Загальні змінні для кольорів та відступів */
+header {
+  background-color: #505d7d;
+  padding: 16px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #f3ece4;
+  padding: 12px 16px;
+  margin: 0 -12px;
+  margin-bottom: 30px;
+}
+header .header__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; /* Елементи розділені */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Вертикальне вирівнювання */
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; /* Заборона переносу елементів */
+  gap: 20px;
+  overflow-x: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Стилізація профілю */
+  /* Стилізація валюти */
+}
+header .header__body .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+header .header__body .profile__icon {
+  width: 40px;
+  height: 40px;
+}
+header .header__body .profile__icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%; /* Іконка у формі кола */
+  border: 2px solid #f3ece4;
+}
+header .header__body .profile__name p {
+  margin: 0;
+  padding-right: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ed7061;
+}
+header .header__body .header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .header__body .currency {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+header .header__body .currency__icon {
+  width: 24px;
+  height: 24px;
+}
+header .header__body .currency__icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+header .header__body .currency__value p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #f3ece4;
+}
+
+.to-character {
+  padding: 12px 20px;
+  color: #ed7061;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  header .header__body {
+    gap: 16px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .header__body .profile,
+  header .header__body .currency {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; /* Вирівнювання по центру */
+  }
+}
+.character {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+  padding: 0 auto;
 }
 .character__image img {
-  max-width: 300px;
+  max-width: 500px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .character__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 15px;
 }
 .character__buttons .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
   width: 120px;
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  cursor: pointer;
 }
 .character__buttons .button__image {
   max-width: 100%;
